@@ -1,4 +1,4 @@
-# TOSS---a-randomizer-python-app
+# TOSS - a randomizer python app
 This is an app that lets you get a random choice from a list.
 
 **This requires that you have python-kivy installed**
