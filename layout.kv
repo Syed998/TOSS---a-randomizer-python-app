@@ -1,0 +1,53 @@
+#:kivy 2.1.0
+
+<MyLayout>:
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        padding: 50
+        spacing: 20
+
+        TextInput:
+            id: user_input
+            text: ''
+            multiline: False
+            pos_hint: {'center_x': 0.5}
+            size_hint: (1, 0.3)
+            on_text_validate: root.on_enter()
+
+        ScrollView:
+            
+
+        rounded_button:
+            text: "RESET ALL"
+            id: clear_button
+            pos_hint: {'center_x': 0.5}
+            size_hint: (1, 0.3)
+            on_press: root.clear()
+            
+
+        Label:
+            id: output
+            text: ""
+            font_size: 32
+
+        rounded_button:
+            text: "RANDOMIZE"
+            id: randomize_button
+            pos_hint: {'center_x': 0.5}
+            size_hint: (1, 0.3)
+            on_press: root.randomize()
+
+<rounded_button>:
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255, 82/255, 150/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10]
+
